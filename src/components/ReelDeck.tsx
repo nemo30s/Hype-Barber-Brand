@@ -6,6 +6,7 @@ const reels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 export default function ReelDeck() {
   const [active, setActive] = useState(0);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const touchStartX = useRef<number | null>(null);
 
   // Pause all, play active
   useEffect(() => {
@@ -23,33 +24,43 @@ export default function ReelDeck() {
   const prev = () => setActive((a) => (a - 1 + reels.length) % reels.length);
   const next = () => setActive((a) => (a + 1) % reels.length);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? next() : prev();
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <div className="flex flex-col items-center gap-10">
       {/* DECK */}
-      <div className="relative w-full flex items-center justify-center h-[620px] md:h-[740px]">
+      <div
+        className="relative w-full flex items-center justify-center h-[620px] md:h-[740px]"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {reels.map((n, i) => {
           const offset = i - active;
 
-          // Only render cards that are close to active
           if (Math.abs(offset) > 3) return null;
 
           const isActive = offset === 0;
           const isLeft = offset < 0;
-
-          // Stacking math
           const absOffset = Math.abs(offset);
-          const xShift = offset * 100; // how far left/right (px)
+          const xShift = offset * 100;
           const scale = isActive ? 1 : 1 - absOffset * 0.08;
           const zIndex = 10 - absOffset;
           const brightness = isActive
             ? "grayscale(0%)"
             : `grayscale(${absOffset * 35}%)`;
           const opacity = absOffset > 2 ? 0 : 1 - absOffset * 0.25;
-          const rotateY = isActive
-            ? 0
-            : isLeft
-              ? 8 * absOffset
-              : -8 * absOffset;
+          const rotateY = isActive ? 0 : isLeft ? 8 * absOffset : -8 * absOffset;
 
           return (
             <div
@@ -74,12 +85,12 @@ export default function ReelDeck() {
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                autoPlay={i === 0}
+                preload="auto"
                 style={{ filter: brightness }}
                 className="w-full h-full object-cover transition-all duration-500"
               />
 
-              {/* Active: no overlay. Inactive: dark overlay */}
               {!isActive && (
                 <div
                   className="absolute inset-0 bg-black/40 flex items-center justify-center"
@@ -97,7 +108,6 @@ export default function ReelDeck() {
                 </div>
               )}
 
-              {/* Number badge */}
               <div className="absolute bottom-3 left-4 text-white/30 text-xs tracking-widest font-mono">
                 {String(n).padStart(2, "0")}
               </div>
@@ -112,22 +122,11 @@ export default function ReelDeck() {
           onClick={prev}
           className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground/60 hover:text-foreground hover:border-primary transition-all duration-300"
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 19l-7-7 7-7"
-            />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
-        {/* Dots */}
         <div className="flex gap-2">
           {reels.map((_, i) => (
             <button
@@ -137,8 +136,7 @@ export default function ReelDeck() {
               style={{
                 width: i === active ? "24px" : "6px",
                 height: "6px",
-                background:
-                  i === active ? "var(--primary)" : "rgba(255,255,255,0.2)",
+                background: i === active ? "var(--primary)" : "rgba(255,255,255,0.2)",
               }}
             />
           ))}
@@ -148,26 +146,14 @@ export default function ReelDeck() {
           onClick={next}
           className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground/60 hover:text-foreground hover:border-primary transition-all duration-300"
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5l7 7-7 7"
-            />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>
       </div>
 
-      {/* Counter */}
       <p className="text-foreground/30 text-sm tracking-widest uppercase font-mono">
-        {String(active + 1).padStart(2, "0")} /{" "}
-        {String(reels.length).padStart(2, "0")}
+        {String(active + 1).padStart(2, "0")} / {String(reels.length).padStart(2, "0")}
       </p>
     </div>
   );

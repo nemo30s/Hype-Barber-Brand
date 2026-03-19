@@ -255,7 +255,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
+            className="flex flex-col md:flex-row justify-between items-start mb-16 gap-6"
           >
             <h2 className="text-6xl md:text-8xl">
               OUR{" "}
