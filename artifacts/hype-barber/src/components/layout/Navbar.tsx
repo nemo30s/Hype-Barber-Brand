@@ -25,17 +25,19 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border/50 py-3" : "bg-transparent py-6"
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md border-b border-border/50 py-3"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="relative z-50 flex items-center gap-2 group">
-          <div className="bg-white rounded-sm p-1 group-hover:scale-105 transition-transform duration-300">
-            <img 
-              src={`${import.meta.env.BASE_URL}hype-barber-logo.png`} 
-              alt="HYPE Barber Logo" 
-              className="h-9 w-auto"
+          <div className="bg-white rounded-md p-2">
+            <img
+              src={`${import.meta.env.BASE_URL}hype-barber-logo.svg`}
+              alt="HYPE Barber Logo"
+              className="h-12 md:h-14 w-auto group-hover:scale-105 transition-transform duration-300"
             />
           </div>
         </a>
@@ -43,8 +45,8 @@ export function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
               className="text-sm font-bold uppercase tracking-widest text-foreground/80 hover:text-primary transition-colors relative group"
             >
@@ -57,14 +59,18 @@ export function Navbar() {
         {/* CTA */}
         <div className="hidden md:block">
           <Button asChild>
-            <a href="https://www.fresha.com/a/hype-barbershop-antwerpen-klapdorp-24-yfruiva1" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.fresha.com/a/hype-barbershop-antwerpen-klapdorp-24-yfruiva1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Book Now
             </a>
           </Button>
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden relative z-50 text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -74,7 +80,7 @@ export function Navbar() {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, clipPath: "circle(0% at top right)" }}
               animate={{ opacity: 1, clipPath: "circle(150% at top right)" }}
               exit={{ opacity: 0, clipPath: "circle(0% at top right)" }}
@@ -101,7 +107,11 @@ export function Navbar() {
                 className="mt-8"
               >
                 <Button size="lg" asChild>
-                  <a href="https://www.fresha.com/a/hype-barbershop-antwerpen-klapdorp-24-yfruiva1" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.fresha.com/a/hype-barbershop-antwerpen-klapdorp-24-yfruiva1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Book Appointment
                   </a>
                 </Button>
