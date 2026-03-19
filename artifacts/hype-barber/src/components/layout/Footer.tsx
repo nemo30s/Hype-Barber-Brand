@@ -8,11 +8,13 @@ export function Footer() {
           
           {/* Brand Col */}
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
-            <img 
-              src={`${import.meta.env.BASE_URL}hype-barber-logo.png`} 
-              alt="HYPE Barber Logo" 
-              className="h-12 w-auto invert mb-6"
-            />
+            <div className="inline-block bg-white rounded-sm p-1.5 mb-6">
+              <img 
+                src={`${import.meta.env.BASE_URL}hype-barber-logo.png`} 
+                alt="HYPE Barber Logo" 
+                className="h-12 w-auto"
+              />
+            </div>
             <h3 className="font-display text-2xl mb-2">Your Style. Elevated.</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               More than a barbershop. A cultural hub and concept store in the heart of Antwerp. All hair types, all backgrounds.

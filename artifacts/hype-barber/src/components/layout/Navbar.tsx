@@ -31,11 +31,13 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="relative z-50 flex items-center gap-2 group">
-          <img 
-            src={`${import.meta.env.BASE_URL}hype-barber-logo.png`} 
-            alt="HYPE Barber Logo" 
-            className="h-10 w-auto invert group-hover:scale-105 transition-transform duration-300"
-          />
+          <div className="bg-white rounded-sm p-1 group-hover:scale-105 transition-transform duration-300">
+            <img 
+              src={`${import.meta.env.BASE_URL}hype-barber-logo.png`} 
+              alt="HYPE Barber Logo" 
+              className="h-9 w-auto"
+            />
+          </div>
         </a>
 
         {/* Desktop Nav */}

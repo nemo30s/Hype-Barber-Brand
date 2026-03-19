@@ -16,6 +16,7 @@ export default function Home() {
             muted 
             playsInline 
             className="w-full h-full object-cover"
+            poster="https://images.fresha.com/locations/location-profile-images/1228968/2524978/c3403322-808e-4c35-9051-9d3d9190abfa-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-large&f_width=1920"
           >
             <source src="https://player.vimeo.com/external/492909854.sd.mp4?s=c68c574cb4cb7a0f15f8f9cbaabf9cc5&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
           </video>
@@ -96,20 +97,20 @@ export default function Home() {
       </section>
 
       {/* 2. MARQUEE TICKER */}
-      <div className="bg-primary py-4 overflow-hidden border-y border-primary-foreground/20">
+      <div className="bg-white py-4 overflow-hidden border-y border-black/10">
         <div className="flex whitespace-nowrap min-w-full w-max animate-marquee">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center shrink-0">
-              <span className="font-display text-4xl text-primary-foreground mx-4">HYPE BARBER</span>
-              <span className="w-2 h-2 bg-primary-foreground rounded-full mx-4" />
-              <span className="font-display text-4xl text-primary-foreground mx-4">ANTWERP</span>
-              <span className="w-2 h-2 bg-primary-foreground rounded-full mx-4" />
-              <span className="font-display text-4xl text-primary-foreground mx-4 text-stroke opacity-70">CONCEPT STORE</span>
-              <span className="w-2 h-2 bg-primary-foreground rounded-full mx-4" />
-              <span className="font-display text-4xl text-primary-foreground mx-4">ALL HAIR TYPES</span>
-              <span className="w-2 h-2 bg-primary-foreground rounded-full mx-4" />
-              <span className="font-display text-4xl text-primary-foreground mx-4 text-stroke opacity-70">ALL BACKGROUNDS</span>
-              <span className="w-2 h-2 bg-primary-foreground rounded-full mx-4" />
+              <span className="font-display text-4xl text-black mx-4">HYPE BARBER</span>
+              <span className="w-2 h-2 bg-primary rounded-full mx-4" />
+              <span className="font-display text-4xl text-black mx-4">ANTWERP</span>
+              <span className="w-2 h-2 bg-black rounded-full mx-4" />
+              <span className="font-display text-4xl text-black/40 mx-4">CONCEPT STORE</span>
+              <span className="w-2 h-2 bg-primary rounded-full mx-4" />
+              <span className="font-display text-4xl text-black mx-4">ALL HAIR TYPES</span>
+              <span className="w-2 h-2 bg-black rounded-full mx-4" />
+              <span className="font-display text-4xl text-black/40 mx-4">ALL BACKGROUNDS</span>
+              <span className="w-2 h-2 bg-primary rounded-full mx-4" />
             </div>
           ))}
         </div>
@@ -129,8 +130,8 @@ export default function Home() {
             <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-all duration-500" />
             {/* barbershop interior working */}
             <img 
-              src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800" 
-              alt="Hype Barber at work"
+              src="https://images.fresha.com/locations/location-profile-images/1228968/2524978/c3403322-808e-4c35-9051-9d3d9190abfa-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-large&f_width=1200" 
+              alt="HYPE Barber interior — Antwerp"
               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
             />
           </motion.div>
@@ -330,8 +331,8 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 max-w-4xl mx-auto">
           {[
-            { name: "Bright", role: "Master Barber | Fades & Afro Specialist", img: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400" },
-            { name: "Gjerry", role: "Senior Stylist | All Hair Types", img: "https://images.unsplash.com/photo-1593011382436-1e523f6630f9?w=400" },
+            { name: "Bright", role: "Master Barber · Fades & Afro Specialist", img: "https://cdn-partners-api.fresha.com/employee-avatars/processed/389730/medium/5213661d-7044-4294-abd0-45fa29393a85-2024-01-07_11h27_22%20(2).png" },
+            { name: "Gjerry", role: "Senior Stylist · All Hair Types", img: "https://cdn-partners-api.fresha.com/employee-avatars/processed/389732/medium/691c2bed-a321-4db8-8a2c-31b99e58a49a-EAB5B203-7233-41D9-9DC1-8EC3C6205D1F.jpeg" },
           ].map((barber, i) => (
             <motion.div 
               initial={{ opacity: 0, y: 40 }}
@@ -344,7 +345,7 @@ export default function Home() {
               <img 
                 src={barber.img} 
                 alt={barber.name} 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
               
@@ -383,7 +384,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden group"
             >
-              <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800" alt="Gallery 1" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+              <img src="https://images.fresha.com/locations/location-profile-images/1228968/2524978/c3403322-808e-4c35-9051-9d3d9190abfa-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-large&f_width=1200" alt="HYPE Barber — Antwerp interior" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
             </motion.div>
             
             <motion.div 
@@ -393,7 +394,7 @@ export default function Home() {
               transition={{ delay: 0.1 }}
               className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden group"
             >
-              <img src="https://images.unsplash.com/photo-1599351431613-18ef1fdd27e1?w=400" alt="Gallery 2" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+              <img src="https://images.fresha.com/locations/location-profile-images/1228968/2524979/b4e8277d-bdd9-4763-ad27-f139964f68e8-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-small&f_width=800" alt="HYPE Barber — wash stations" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
             </motion.div>
 
             <motion.div 
@@ -403,7 +404,7 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden group"
             >
-              <img src="https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=400" alt="Gallery 3" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+              <img src="https://images.fresha.com/locations/location-profile-images/1228968/2524980/636d53e6-7869-44e0-bfd1-c451fc1ac203-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-small&f_width=800" alt="HYPE Barber — concept store lounge" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
             </motion.div>
 
             <motion.div 
@@ -413,7 +414,7 @@ export default function Home() {
               transition={{ delay: 0.3 }}
               className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden group"
             >
-              <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400" alt="Gallery 4" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+              <img src="https://images.fresha.com/locations/location-profile-images/1228968/2524979/b4e8277d-bdd9-4763-ad27-f139964f68e8-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-small&f_width=800" alt="HYPE Barber — styling area" className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
             </motion.div>
 
             <motion.div 
@@ -423,7 +424,7 @@ export default function Home() {
               transition={{ delay: 0.4 }}
               className="col-span-1 row-span-1 relative rounded-2xl overflow-hidden group"
             >
-              <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400" alt="Gallery 5" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+              <img src="https://images.fresha.com/locations/location-profile-images/1228968/2524980/636d53e6-7869-44e0-bfd1-c451fc1ac203-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-small&f_width=800" alt="HYPE Barber — waiting area" className="w-full h-full object-cover object-bottom grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
             </motion.div>
           </div>
         </div>
