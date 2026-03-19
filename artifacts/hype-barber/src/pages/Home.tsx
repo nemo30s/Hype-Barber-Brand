@@ -15,11 +15,11 @@ export default function Home() {
             loop 
             muted 
             playsInline 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hero-video"
             poster="https://images.fresha.com/locations/location-profile-images/1228968/2524978/c3403322-808e-4c35-9051-9d3d9190abfa-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-large&f_width=1920"
           >
-            <source src="https://videos.pexels.com/video-files/4349793/4349793-hd_1920_1080_25fps.mp4" type="video/mp4" />
-            <source src="https://player.vimeo.com/external/492909854.sd.mp4?s=c68c574cb4cb7a0f15f8f9cbaabf9cc5&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-hairdresser-cutting-clients-hair-4702-large.mp4" type="video/mp4" />
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-man-getting-a-haircut-4705-large.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/70 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/40" />
@@ -98,26 +98,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 2. MARQUEE TICKER */}
-      <div className="bg-black py-4 overflow-hidden border-y border-white/10">
-        <div className="flex whitespace-nowrap min-w-full w-max animate-marquee">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="flex items-center shrink-0">
-              <span className="font-display text-4xl text-white mx-4">HYPE BARBER</span>
-              <span className="w-2 h-2 bg-white rounded-full mx-4" />
-              <span className="font-display text-4xl text-white mx-4">ANTWERP</span>
-              <span className="w-2 h-2 bg-white/30 rounded-full mx-4" />
-              <span className="font-display text-4xl text-white/30 mx-4">CONCEPT STORE</span>
-              <span className="w-2 h-2 bg-white rounded-full mx-4" />
-              <span className="font-display text-4xl text-white mx-4">ALL HAIR TYPES</span>
-              <span className="w-2 h-2 bg-white/30 rounded-full mx-4" />
-              <span className="font-display text-4xl text-white/30 mx-4">ALL BACKGROUNDS</span>
-              <span className="w-2 h-2 bg-white rounded-full mx-4" />
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* 3. ABOUT SECTION */}
       <section id="about" className="py-24 md:py-40 max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -130,10 +110,9 @@ export default function Home() {
             className="relative h-[600px] w-full rounded-2xl overflow-hidden group"
           >
             <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-all duration-500" />
-            {/* barbershop interior working */}
             <img 
-              src="https://images.fresha.com/locations/location-profile-images/1228968/2524978/c3403322-808e-4c35-9051-9d3d9190abfa-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-large&f_width=1200" 
-              alt="HYPE Barber interior — Antwerp"
+              src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80" 
+              alt="Barber at work — close-up"
               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
             />
           </motion.div>
@@ -146,7 +125,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-5xl md:text-7xl mb-6">
-              MORE THAN A <span className="font-accent italic tracking-normal normal-case">haircut.</span>
+              MORE THAN A <span className="font-accent italic tracking-normal normal-case">HAIRCUT.</span>
             </h2>
             <p className="text-lg text-muted-foreground font-light mb-8 leading-relaxed">
               Located at Klapdorp 24, HYPE Barber is redefining the grooming experience. We are an inclusive space where premium craftsmanship meets street culture. Whether you need a classic fade, specialized afro hair care, or exclusive grooming products from our concept store — you belong here.
