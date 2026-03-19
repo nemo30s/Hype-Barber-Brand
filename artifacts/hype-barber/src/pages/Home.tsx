@@ -11,11 +11,11 @@ export default function Home() {
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1920&q=90"
+            src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="HYPE Barber hero"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black/70 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-black/50 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/40" />
         </div>
 
