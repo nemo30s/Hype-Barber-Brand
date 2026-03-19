@@ -1,0 +1,13 @@
+packages:
+  "framer-motion": "For cinematic scroll animations, staggered text reveals, and page transitions"
+  "react-countup": "For animating the statistics numbers in the About section"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility for merging tailwind classes safely"
+  "@radix-ui/react-slot": "For reusable button component composition"
+
+images: []
+
+notes:
+  - This is a purely static frontend marketing page for HYPE Barber.
+  - No backend API integration is required as all data is hardcoded.
+  - Images use the provided Unsplash URLs and the local logo file.
