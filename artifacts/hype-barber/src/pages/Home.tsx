@@ -18,6 +18,7 @@ export default function Home() {
             className="w-full h-full object-cover"
             poster="https://images.fresha.com/locations/location-profile-images/1228968/2524978/c3403322-808e-4c35-9051-9d3d9190abfa-HYPEBARBERSHOP-BE-VlaamsGewest-Antwerpen-Antwerpen-Fresha.jpg?class=venue-gallery-large&f_width=1920"
           >
+            <source src="https://videos.pexels.com/video-files/4349793/4349793-hd_1920_1080_25fps.mp4" type="video/mp4" />
             <source src="https://player.vimeo.com/external/492909854.sd.mp4?s=c68c574cb4cb7a0f15f8f9cbaabf9cc5&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/70 mix-blend-multiply" />
@@ -25,7 +26,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-end h-full pb-32">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center h-full">
           <motion.div 
             initial="hidden"
             animate="visible"
@@ -42,7 +43,8 @@ export default function Home() {
                     hidden: { y: "100%", opacity: 0 },
                     visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
                   }}
-                  className={`font-display text-[15vw] leading-[0.8] md:text-9xl m-0 p-0 ${i === 2 ? "text-primary" : "text-foreground"}`}
+                  className="font-display text-[15vw] leading-[0.8] md:text-9xl m-0 p-0"
+                  style={i === 2 ? { WebkitTextStroke: "3px white", color: "transparent" } : { color: "white" }}
                 >
                   {word}
                 </motion.h1>
@@ -97,20 +99,20 @@ export default function Home() {
       </section>
 
       {/* 2. MARQUEE TICKER */}
-      <div className="bg-white py-4 overflow-hidden border-y border-black/10">
+      <div className="bg-black py-4 overflow-hidden border-y border-white/10">
         <div className="flex whitespace-nowrap min-w-full w-max animate-marquee">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center shrink-0">
-              <span className="font-display text-4xl text-black mx-4">HYPE BARBER</span>
-              <span className="w-2 h-2 bg-primary rounded-full mx-4" />
-              <span className="font-display text-4xl text-black mx-4">ANTWERP</span>
-              <span className="w-2 h-2 bg-black rounded-full mx-4" />
-              <span className="font-display text-4xl text-black/40 mx-4">CONCEPT STORE</span>
-              <span className="w-2 h-2 bg-primary rounded-full mx-4" />
-              <span className="font-display text-4xl text-black mx-4">ALL HAIR TYPES</span>
-              <span className="w-2 h-2 bg-black rounded-full mx-4" />
-              <span className="font-display text-4xl text-black/40 mx-4">ALL BACKGROUNDS</span>
-              <span className="w-2 h-2 bg-primary rounded-full mx-4" />
+              <span className="font-display text-4xl text-white mx-4">HYPE BARBER</span>
+              <span className="w-2 h-2 bg-white rounded-full mx-4" />
+              <span className="font-display text-4xl text-white mx-4">ANTWERP</span>
+              <span className="w-2 h-2 bg-white/30 rounded-full mx-4" />
+              <span className="font-display text-4xl text-white/30 mx-4">CONCEPT STORE</span>
+              <span className="w-2 h-2 bg-white rounded-full mx-4" />
+              <span className="font-display text-4xl text-white mx-4">ALL HAIR TYPES</span>
+              <span className="w-2 h-2 bg-white/30 rounded-full mx-4" />
+              <span className="font-display text-4xl text-white/30 mx-4">ALL BACKGROUNDS</span>
+              <span className="w-2 h-2 bg-white rounded-full mx-4" />
             </div>
           ))}
         </div>
@@ -144,7 +146,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-5xl md:text-7xl mb-6">
-              More than a <span className="font-accent italic text-primary lowercase tracking-normal">haircut.</span>
+              MORE THAN A <span className="font-accent italic tracking-normal normal-case">haircut.</span>
             </h2>
             <p className="text-lg text-muted-foreground font-light mb-8 leading-relaxed">
               Located at Klapdorp 24, HYPE Barber is redefining the grooming experience. We are an inclusive space where premium craftsmanship meets street culture. Whether you need a classic fade, specialized afro hair care, or exclusive grooming products from our concept store — you belong here.
@@ -203,7 +205,7 @@ export default function Home() {
             className="md:col-span-3"
           >
             <h2 className="text-5xl md:text-7xl mb-6 text-background">
-              Born in Antwerp. <br/><span className="text-background/50">Built for everyone.</span>
+              BORN IN ANTWERP. <br/><span className="text-background/50">BUILT FOR EVERYONE.</span>
             </h2>
             <p className="text-xl text-background/80 max-w-2xl">
               We aren't just cutting hair; we're curating an identity. The HYPE aesthetic is raw, refined, and undeniably authentic. Our concept store features hand-picked apparel and premium grooming products designed to elevate your everyday routine.
@@ -221,7 +223,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
           >
-            <h2 className="text-6xl md:text-8xl">Our <span className="font-accent italic text-primary lowercase tracking-normal">Services</span></h2>
+            <h2 className="text-6xl md:text-8xl">OUR <span className="font-accent italic tracking-normal normal-case">Services</span></h2>
             <Button asChild variant="outline">
               <a href="https://www.fresha.com/a/hype-barbershop-antwerpen-klapdorp-24-yfruiva1" target="_blank" rel="noopener noreferrer">View Full Menu</a>
             </Button>
@@ -278,7 +280,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="sticky top-32"
               >
-                <h2 className="text-6xl md:text-7xl mb-6">Concept <br/><span className="text-background/50">Store.</span></h2>
+                <h2 className="text-6xl md:text-7xl mb-6">CONCEPT <br/><span className="text-background/50">STORE.</span></h2>
                 <p className="text-lg text-background/80 mb-8">
                   Elevate your daily routine with our curated selection of premium hair and beard care products. Tested by our barbers, approved by the streets.
                 </p>
@@ -303,10 +305,10 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   key={product.name}
-                  className="p-8 border border-background/20 rounded-2xl hover:border-primary transition-colors group cursor-pointer"
+                  className="p-8 border border-background/20 rounded-2xl hover:border-background transition-colors group cursor-pointer"
                 >
-                  <div className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                    <Star className="w-5 h-5 text-background group-hover:text-primary-foreground" />
+                  <div className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center mb-6 group-hover:bg-background transition-colors">
+                    <Star className="w-5 h-5 text-background group-hover:text-foreground" />
                   </div>
                   <h4 className="font-display text-2xl mb-2">{product.name}</h4>
                   <p className="text-background/60 font-light">{product.desc}</p>
@@ -325,7 +327,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-6xl md:text-8xl">The <span className="font-accent italic text-primary lowercase tracking-normal">Masters</span></h2>
+          <h2 className="text-6xl md:text-8xl">THE <span className="font-accent italic tracking-normal normal-case">Artists</span></h2>
           <p className="text-muted-foreground mt-4 text-lg">Meet the artists behind the chairs.</p>
         </motion.div>
 
@@ -345,7 +347,7 @@ export default function Home() {
               <img 
                 src={barber.img} 
                 alt={barber.name} 
-                className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
               
@@ -373,7 +375,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-6xl md:text-8xl mb-12"
           >
-            The <span className="font-accent italic text-primary lowercase tracking-normal">Work.</span>
+            THE <span className="font-accent italic tracking-normal normal-case">Work.</span>
           </motion.h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
@@ -438,7 +440,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-6xl md:text-8xl">What They <span className="font-accent italic text-primary lowercase tracking-normal">Say</span></h2>
+          <h2 className="text-6xl md:text-8xl">WHAT THEY <span className="font-accent italic tracking-normal normal-case">Say</span></h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -490,7 +492,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="relative z-10 text-center max-w-2xl px-6"
         >
-          <h2 className="text-6xl md:text-8xl mb-6">Book Your <span className="font-accent italic text-primary lowercase tracking-normal">Session.</span></h2>
+          <h2 className="text-6xl md:text-8xl mb-6">BOOK YOUR <span className="font-accent italic tracking-normal normal-case">Session.</span></h2>
           <p className="text-xl text-muted-foreground font-light mb-10">
             Reserve your chair at Klapdorp 24, Antwerp. Walk-ins are welcome, but appointments guarantee your spot.
           </p>

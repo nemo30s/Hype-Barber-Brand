@@ -25,7 +25,7 @@
   /* Dark cinematic aesthetic */
   --background: 0 0% 4%;      /* #0a0a0a */
   --foreground: 60 11% 96%;   /* #f5f5f0 */
-  --primary: 43 89% 49%;      /* #E9A404 (Gold) */
+  --primary: 0 0% 100%;       /* White */
   --primary-foreground: 0 0% 0%;
   --card: 0 0% 8%;            /* #141414 */
   --card-foreground: 60 11% 96%;
